@@ -1,0 +1,686 @@
+/* Container */
+.container {
+    text-align: center;
+    padding: 20px;
+}
+
+/* Register Button */
+#register-button {
+    background-color: #4285f4; /* Google blue */
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    cursor: pointer;
+    font-size: 18px;
+    border-radius: 8px;
+    transition: background-color 0.3s;
+}
+
+#register-button:hover {
+    background-color: #357ae8; /* Darker Google blue on hover */
+}
+
+/* Registration Options */
+#registrationOptions {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+/* Register as Farmer and Driver Buttons */
+#register-farmer-button,
+#register-driver-button {
+    background-color: #4285f4; /* Google blue */
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    cursor: pointer;
+    font-size: 18px;
+    margin: 0 10px;
+    border-radius: 8px;
+    transition: background-color 0.3s;
+}
+
+#register-farmer-button:hover,
+#register-driver-button:hover {
+    background-color: #357ae8; /* Darker Google blue on hover */
+}
+
+/* Centered Form Container */
+.centered-form {
+    width: 80%;
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: left;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Text Input Fields */
+input[type="text"],
+input[type="tel"],
+input[type="date"],
+input[type="password"],
+select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+/* OTP Buttons Container */
+.otp-buttons-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+/* OTP Button Style */
+.otp-button {
+    flex: 1;
+    background-color: #4285f4; /* Google blue */
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    cursor: pointer;
+    font-size: 18px;
+    border-radius: 8px;
+    transition: background-color 0.3s;
+}
+
+.otp-button:hover {
+    background-color: #357ae8; /* Darker Google blue on hover */
+}
+
+/* Success Message */
+.success-message {
+    font-size: 18px;
+    color: #4caf50; /* Green color */
+    margin-top: 10px;
+    display: none;
+}
+
+/* Error Message */
+.error-message {
+    font-size: 16px;
+    color: #ff0000; /* Red color */
+    margin-top: 10px;
+    display: none;
+}
+
+/* CSS for placing buttons below and centered */
+.otp-container {
+    text-align: center;
+    margin-bottom: 20px;
+}
+/* Style the "Send OTP" button */
+#sendFarmerOTPButton,
+#sendDriverOTPButton {
+    display: block;
+    margin: 10px auto;
+    background-color: #4285f4;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+/* Style the "Verify OTP" button */
+#verifyFarmerOTPButton,
+#verifyDriverOTPButton {
+    display: block;
+    margin: 10px auto;
+    background-color: #4285f4;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+
+/*####################################*/
+
+
+#background-video {
+	position: fixed;
+	right: 0;
+	bottom: 0;
+	min-width: 100%;
+	min-height: 100%;
+	width: auto;
+	height: auto;
+	z-index: -1;
+	/* Ensure it's in the background */
+}
+
+/* Set the background color to black */
+body {
+	animation: moveBackground 10s linear infinite;
+	background: linear-gradient(135deg, rgb(255, 128, 0) 33.33%, #FFFFFF 33.33%, #FFFFFF 66.66%, #138808 66.66%);
+	color: #FFFFFF;
+	/* Set text color to white for better visibility */
+	background-size: 200% 200%;
+
+	/* Double the width and height for smooth diagonal movement */
+}
+
+@keyframes moveBackground {
+	0% {
+		background-position: 0% 100%;
+		/* Start from the bottom-left corner */
+	}
+
+	100% {
+		background-position: 100% 0%;
+		/* End at the top-right corner */
+	}
+}
+
+
+
+/* Style the container */
+.container {
+	max-width: 100%;
+	margin: 0 auto;
+	padding: 20px;
+
+	/* Use a semi-transparent background color */
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+	position: relative;
+	/* Add relative positioning for the ellipsis menu */
+}
+
+/* Add CSS to style the buttons in green */
+.green-button {
+	background-color: green;
+	color: white;
+	padding: 10px 20px;
+	border: none;
+	cursor: pointer;
+}
+
+/* Style the buttons inside the registrationOptions div */
+#registrationOptions button {
+	margin: 10px;
+}
+
+
+
+
+
+
+
+/* Position the notification button on the left side near the Ellipsis Menu button */
+.notification-button {
+	position: absolute;
+	top: 20px;
+	right: 90px;
+	/* Adjust the left value as needed to position it properly */
+	background-color: transparent;
+	border-radius: 100%;
+	cursor: pointer;
+	font-size: 30px;
+	width: 40px;
+	height: 40px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+	/* Adjust the font size as needed */
+	color: black;
+	/* Adjust the color as needed */
+}
+
+.notification-button i {
+	display: block;
+}
+
+
+
+/* Style for the Login Button */
+#login-button {
+	background-image: url('login-button-image.jpg');
+	background-color: #3498db;
+	float: left;
+	width: 120px;
+	height: 20px;
+	margin-top: 20px;
+	/* Add this property */
+}
+
+
+
+/* Hover effect */
+.drive-button:hover {
+	opacity: 0.8;
+}
+
+
+/* Style form elements */
+label {
+	font-weight: bold;
+	margin-bottom: 8px;
+}
+
+input[type="text"],
+input[type="tel"],
+select.custom-select,
+textarea {
+	width: 100%;
+	padding: 10px;
+	margin-bottom: 20px;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	font-size: 16px;
+	background-color: rgb(0, 0, 0);
+	/* Semi-transparent white background */
+	color: white;
+}
+
+/* Style the select element with custom-select class */
+select.custom-select {
+	background-color: black;
+	color: white;
+}
+
+select.custom-select option {
+	background-color: black;
+	/* Change background color for options */
+}
+
+button[type="submit"] {
+	background-color: #4CAF50;
+	color: #fff;
+	border: none;
+	border-radius: 4px;
+	padding: 10px 20px;
+	font-size: 16px;
+	cursor: pointer;
+	transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+	background-color: #45a049;
+}
+
+/* Style for the image at the beginning of the webpage */
+/* Style for the image at the beginning of the webpage */
+.image {
+	width: 100%;
+	height: 100%;
+
+	/* Make the image 100% of the viewport height */
+	object-fit: cover;
+	/* Cover the entire viewport */
+	object-position: center;
+	/* Center the image horizontally */
+	animation: moveRightToLeft 10s linear infinite alternate;
+}
+
+@keyframes moveRightToLeft {
+	10% {
+		transform: translateX(10%);
+	}
+
+	5% {
+		transform: translateX(0%);
+	}
+}
+
+
+
+/* Style the buttons */
+.buttons {
+	text-align: center;
+	margin-top: 20px;
+}
+
+.buttons button {
+	margin: 10px;
+	background-color: black;
+	color: white;
+	border: none;
+	border-radius: 4px;
+	padding: 10px 20px;
+	font-size: 16px;
+	cursor: pointer;
+	transition: background-color 0.3s ease;
+}
+
+.buttons button:hover {
+	background-color: #333;
+	/* Darker background color on hover */
+}
+
+/* Style the ellipsis menu */
+.ellipsis-menu {
+	z-index: 1000;
+	position: absolute;
+	top: 20px;
+	right: 20px;
+	background-color: transparent;
+	border-radius: 100%;
+	width: 40px;
+	height: 40px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+
+}
+
+.ellipsis-menu:hover {
+	background-color: rgb(255, 255, 255);
+}
+
+/* Style the ellipsis menu items */
+.ellipsis-items {
+	position: absolute;
+	top: 60px;
+	right: 20px;
+	background-color: rgb(0, 0, 0);
+	border-radius: 4px;
+	padding: 10px;
+	display: none;
+}
+
+.ellipsis-menu:hover .ellipsis-items {
+	display: block;
+}
+
+/* Style the ellipsis menu buttons */
+.ellipsis-items button {
+	background-color: rgb(255, 255, 255);
+	color: rgb(0, 0, 0);
+	width: 100%;
+	text-align: center;
+	padding: 10px;
+	margin: 5px 0;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+	white-space: nowrap;
+	/* Prevent line breaks in button text */
+}
+
+
+/* Style for the buttons */
+.drive-button {
+	position: absolute;
+	display: inline-block;
+	padding: 10px 20px;
+	background-color: rgb(0, 0, 0);
+	/* Dark color with transparency */
+	color: rgb(255, 255, 255);
+	text-align: center;
+	text-decoration: none;
+	font-size: 16px;
+	border-radius: 4px;
+	cursor: pointer;
+	transition: background-color 0.3s ease;
+}
+
+.drive-button:hover {
+	background-color: rgba(0, 0, 0, 0.7);
+	/* Darker color on hover */
+}
+
+
+#login-button {
+	top: 110px;
+	position: fixed;
+	/* Adjust the top position as needed */
+	left: 50px;
+	/* Adjust the left position as needed */
+}
+
+/*#######################################################################
+/* Styling for the Overlay */
+.overlay {
+	display: none;
+	position: fixed;
+	top: 50%;
+	/* Center vertically */
+	left: 50%;
+	/* Center horizontally */
+	transform: translate(-50%, -50%);
+	/* Center both vertically and horizontally */
+	width: 60%;
+	height: 80%;
+	background-color: rgb(255, 255, 255);
+	/* Semi-transparent black background */
+	z-index: 1;
+}
+
+.overlay-content {
+	background-color: white;
+	color: black;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 60%;
+	height: 80%;
+	transform: translate(-50%, -50%);
+	padding: 0px;
+	text-align: center;
+	border-radius: 5px;
+}
+
+/* Styling for the overlay content */
+.overlay-text {
+	background-color: rgb(255, 255, 255);
+	color: rgb(0, 0, 0);
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 400px;
+	/* Set the width to 400px */
+	max-height: 300px;
+	/* Set the maximum height to 400px */
+	overflow-y: auto;
+	/* Add vertical scroll if content overflows */
+	padding: 20px;
+	text-align: center;
+	border-radius: 5px;
+}
+
+/* Styling for the overlay close button */
+.close-button {
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	font-size: 20px;
+	cursor: pointer;
+	background-color: rgb(255, 255, 255);
+	padding: 20px;
+	border-radius: 50%;
+	color: rgb(0, 0, 0);
+}
+
+/* Styling for the footer */
+.footer {
+	display: flex;
+	justify-content: center;
+	gap: 20px;
+	/* Adjust the space between footer links as needed */
+	text-align: center;
+	cursor: pointer;
+	position: fixed;
+	bottom: 0px;
+	/* Adjust the distance from the bottom as needed */
+	left: 50%;
+	/* Center horizontally */
+	transform: translateX(-50%);
+	/* Center horizontally */
+	width: 100%;
+	background-color: rgba(0, 0, 0, 0.7);
+	/* Semi-transparent black background */
+	z-index: 1;
+	padding: 0px;
+	/* Add padding to the footer */
+	border-radius: 0px;
+}
+
+/* Styling for the footer close button (same as overlay close button) */
+.footer .close-button {
+	background-color: rgb(255, 255, 255);
+	color: rgb(0, 0, 0);
+}
+
+/* Add more specific styles for your footer links if necessary */
+.footer p {
+	color: rgb(255, 255, 255);
+	text-decoration: underline;
+}
+
+/* Style the buttons section to center both horizontally and vertically */
+.buttons {
+	position: fixed;
+	/* Fixed position so that it stays at the center */
+	left: 0;
+	top: 80%;
+	/* Center vertically */
+	transform: translateY(-50%);
+	/* Center vertically */
+	width: 100%;
+	/* Full width of the viewport */
+
+	padding: 10px;
+	/* Add some padding for spacing */
+	display: flex;
+	/* Use flex layout to align buttons horizontally */
+	justify-content: center;
+	/* Center buttons horizontally */
+	align-items: center;
+	/* Center buttons vertically */
+}
+
+/* Style the individual buttons */
+.buttons button {
+	background-color: rgb(0, 128, 0);
+	color: white;
+	border: none;
+	border-radius: 5px;
+	padding: 10px 20px;
+	margin: 10px;
+	/* Add some margin between buttons */
+	cursor: pointer;
+	transition: background-color 0.3s ease;
+}
+
+/* Style the buttons on hover for better user feedback */
+.buttons button:hover {
+	background-color: #333;
+	/* Darker background color on hover */
+}
+
+/*###############*/
+/* CSS for the buttons */
+.buttons {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	padding: 10px;
+	display: flex;
+	justify-content: space-around;
+}
+
+.buttons button {
+	background-color: rgb(0, 128, 0);
+	color: white;
+	border: none;
+	border-radius: 5px;
+	padding: 10px 20px;
+	margin: 5px;
+	cursor: pointer;
+	transition: background-color 0.3s ease;
+}
+
+.buttons button:hover {
+	background-color: #333;
+}
+
+/* CSS for the centered forms */
+.centered-form {
+	display: none;
+	position: fixed;
+	top: 5%;
+	bottom: 5%;
+	/* Adjust the top position to leave space from the top */
+	left: 50%;
+	transform: translate(-50%, 0%);
+	background-color: white;
+	color: black;
+	padding: 20px;
+	text-align: left;
+	border-radius: 5px;
+	z-index: 2;
+	max-height: 70%;
+	/* Adjust the maximum height as needed */
+	overflow-y: auto;
+	/* Add vertical scroll if content overflows */
+}
+
+/* Styling for the overlay close button */
+.close-button {
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	font-size: 20px;
+	cursor: pointer;
+	background-color: rgb(255, 255, 255);
+	padding: 5px;
+	border-radius: 50%;
+	color: rgb(0, 0, 0);
+}
+
+/* CSS for success message */
+.success-message {
+	display: none;
+	color: green;
+	font-weight: bold;
+}
+
+/*#######################*/
+/* Add your CSS styling here */
+body {
+	font-family: Arial, sans-serif;
+	text-align: center;
+	margin-top: 10px;
+}
+
+/* Positioning for the buttons */
+#registration {
+	top: 30px;
+	/* Adjust the top position as needed */
+	left: 50px;
+	/* Adjust the left position as needed */
+}
+
+.container {
+	text-align: center;
+}
+
+.centered-form {
+	display: none;
+}
+
+.centered-form button {
+	margin: 50px;
+}
+
+/*###################################################*/
+
+
+
