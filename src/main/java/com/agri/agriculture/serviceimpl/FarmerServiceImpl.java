@@ -27,32 +27,39 @@ public class FarmerServiceImpl implements FarmerService {
 
     @Override
     public Farmer registerFarmer(FarmerDto farmerDto) {
-        // Convert FarmerDto to Farmer entity
-        Farmer farmer = convertDtoToEntity(farmerDto);
+        // Verify OTP (you should implement this logic)
+        if (!verifyOTP(farmerDto.getPhoneNumber(), farmerDto.getOtp())) {
+            throw new IllegalArgumentException("Invalid OTP");
+        }
+        // Hash the password securely using BCrypt (you should implement this logic)
+        String hashedPassword = hashPassword(farmerDto.getPassword());
 
-        // Save the farmer in the database
-        return farmerRepository.save(farmer);
-    }
-
-    // You can implement other farmer-related methods here
-
-    private Farmer convertDtoToEntity(FarmerDto farmerDto) {
+        // Create a new Farmer entity
         Farmer farmer = new Farmer();
         farmer.setFullName(farmerDto.getFullName());
+        farmer.setPhoneNumber(farmerDto.getPhoneNumber());
+        farmer.setOtp(farmerDto.getOtp());
+        farmer.setPassword(hashedPassword);
+
+        // Set other fields from the DTO to the entity
         farmer.setFarmAddress(farmerDto.getFarmAddress());
         farmer.setWorkDetails(farmerDto.getWorkDetails());
         farmer.setPaymentMode(farmerDto.getPaymentMode());
-        farmer.setPhoneNumber(farmerDto.getPhoneNumber());
         farmer.setCountry(farmerDto.getCountry());
         farmer.setState(farmerDto.getState());
         farmer.setDistrict(farmerDto.getDistrict());
         farmer.setSubdistrict(farmerDto.getSubdistrict());
         farmer.setVillage(farmerDto.getVillage());
         farmer.setPincode(farmerDto.getPincode());
-        // Set other properties as needed
 
-        return farmer;
+        // Save the farmer in the database
+        return farmerRepository.save(farmer);
     }
+
+    private boolean verifyOTP(String phoneNumber, String otp) {
+		// TODO Auto-generated method stub
+		return true;
+	}
 
 	@Override
     public List<Farmer> getAllFarmers() {
