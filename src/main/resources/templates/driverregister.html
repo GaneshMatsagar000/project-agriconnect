@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<title>Register as Farmer</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="/css/register.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+	<script src="https://www.gstatic.com/charts/loader.js"></script>
+	<script src="https://www.google.com/jsapi"></script>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script src="/js/register.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+		crossorigin="anonymous"></script>
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+	<div class="container">
+		<form class="row g-3">
+			<h2 class="text-center">Register as Farmer </h2>
+			<div class="col-md-6">
+				<label for="inputName" class="form-label">Name</label>
+				<input type="text" class="form-control" id="inputName" required>
+			</div>
+			<div class="col-md-6">
+				<label for="inputSurname" class="form-label">Surname</label>
+				<input type="text" class="form-control" id="inputSurname" required>
+			</div>
+
+			<div class="col-md-4">
+				<label for="inputState" class="form-label">Country</label>
+
+				<select id="farmer-country" required>
+					<option value="">Select Country</option>
+					<option value="India">India</option>
+					<option value="United States">US</option>
+					<option value="Canada">UK</option>
+					<option value="Australia">Australia</option>
+					<option value="United Kingdom">Canada</option>
+					<option value="Germany">Germany</option>
+
+				</select>
+			</div>
+
+			<div class="col-md-4">
+				<label for="inputState" class="form-label">State</label>
+				<select id="farmer-country" required>
+					<option value="">Select State</option>
+					<option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
+					<option value="Andhra Pradesh">Andhra Pradesh</option>
+					<option value="Arunachal Pradesh">Arunachal Pradesh</option>
+					<option value="Assam">Assam</option>
+					<option value="Bihar">Bihar</option>
+					<option value="Chandigarh">Chandigarh</option>
+					<option value="Chhattisgarh">Chhattisgarh</option>
+					<option value="Dadra and Nagar Haveli">Dadra and Nagar Haveli</option>
+					<option value="Daman and Diu">Daman and Diu</option>
+					<option value="Delhi">Delhi</option>
+					<option value="Goa">Goa</option>
+					<option value="Gujarat">Gujarat</option>
+					<option value="Haryana">Haryana</option>
+					<option value="Himachal Pradesh">Himachal Pradesh</option>
+					<option value="Jammu and Kashmir">Jammu and Kashmir</option>
+					<option value="Jharkhand">Jharkhand</option>
+					<option value="Karnataka">Karnataka</option>
+					<option value="Kerala">Kerala</option>
+					<option value="Lakshadweep">Lakshadweep</option>
+					<option value="Madhya Pradesh">Madhya Pradesh</option>
+					<option value="Maharashtra">Maharashtra</option>
+					<option value="Manipur">Manipur</option>
+					<option value="Meghalaya">Meghalaya</option>
+					<option value="Mizoram">Mizoram</option>
+					<option value="Nagaland">Nagaland</option>
+					<option value="Odisha">Odisha</option>
+					<option value="Puducherry">Puducherry</option>
+					<option value="Punjab">Punjab</option>
+					<option value="Rajasthan">Rajasthan</option>
+					<option value="Sikkim">Sikkim</option>
+					<option value="Tamil Nadu">Tamil Nadu</option>
+					<option value="Telangana">Telangana</option>
+					<option value="Tripura">Tripura</option>
+					<option value="Uttar Pradesh">Uttar Pradesh</option>
+					<option value="Uttarakhand">Uttarakhand</option>
+					<option value="West Bengal">West Bengal</option>
+				</select>
+			</div>
+
+			<div class="col-md-4">
+				<label for "inputCity" class="form-label">District</label>
+				<input type="text" class="form-control" id="inputCity" required>
+			</div>
+
+			<div class="col-md-4">
+				<label for "inputCity" class="form-label">Sub-District</label>
+				<input type="text" class="form-control" id="inputCity" required>
+			</div>
+
+			<div class="col-md-4">
+				<label for "inputCity" class="form-label">Village</label>
+				<input type="text" class="form-control" id="inputCity" required>
+			</div>
+
+			<div class="col-md-4">
+				<label for="inputZip" class="form-label">Zip</label>
+				<input type="text" class="form-control" id="inputZip" required>
+			</div>
+
+			<div class="col-md-4">
+				<label for="farmer-birth-date">Birth Date:</label>
+				<input type="date" id="farmer-birth-date" required>
+				<br> <!-- Add line break here -->
+			</div>
+
+			<label for="tractorName">Select Tractor Name:</label>
+			<select id="tractorName" name="tractorName" class="custom-select" onchange="toggleOtherTractorName(this)">
+				<option value="mahindra">Mahindra</option>
+				<option value="ferguson">Ferguson</option>
+				<option value="sonalika">Sonalika</option>
+				<option value="swaraj">Swaraj</option>
+				<option value="john-deere">John Deere</option>
+				<option value="eicher">Eicher</option>
+				<option value="tata">Tata</option>
+				<option value="force">Force</option>
+				<option value="other">Other</option>
+			</select>
+
+			<div id="otherTractorNameContainer" style="display: none;">
+				<label for="otherTractorName">Enter Other Tractor Name:</label>
+				<input type="text" id="otherTractorName1" name="otherTractorName"><br>
+			</div>
+
+			<label for="tractor-number">Tractor Number:</label>
+			<input type="text" id="tractor-number" placeholder="Enter Tractor Number"><br>
+
+			<div class="col-md-6">
+				<label for="farmer-phone-number">Phone Number:</label>
+				<input type="tel" id="farmer-phone-number" placeholder="Enter your phone number" required>
+				<button type="submit" class="btn btn-primary" id="sendFarmerOTPButton" onclick="sendOTP('farmer')">Send
+					OTP</button>
+				<div id="otpSuccessMessage" style="color: green;"></div>
+			</div>
+
+			<div class="col-md-6">
+				<label for="Enterotp">Enter OTP:</label>
+				<input type="text" id="Farmer-otp" placeholder="Enter OTP" maxlength="6" required>
+				<button type="submit" class="btn btn-primary" id="verifyFarmerOTPButton"
+					onclick="verifyOTP('farmer')">Verify OTP</button>
+				<div id="registrationMessage" style="display: none;"></div>
+			</div>
+
+			<div class="col-md-6">
+				<label for="inputPassword" class="form-label">Password</label>
+				<input type="Password" class="form-control" id="inputPassword" required>
+			</div>
+
+			<div class="col-md-6">
+				<label for="inputConfirmPassword" class="form-label">Confirm Password</label>
+				<input type="Password" class="form-control" id="inputConfirmPassword" required>
+			</div>
+
+
+			<div class="col-12">
+				<div class="form-check text-center">
+
+					<label class="form-check-label" for="gridCheck">
+						<input class="form-check-input" type="checkbox" id="gridCheck">
+						Keep me login
+					</label>
+				</div>
+			</div>
+
+
+			<div id="farmerRegistrationSuccess" class="centered-form" style="display: none;">
+				Farmer Registration done!
+			</div>
+
+			<div id="farmerOtpErrorMessage" class="error-message" style="display: none;">
+				Incorrect OTP. Please try again.
+			</div>
+
+			<div class="centered-registration-buttons text-center">
+				<button type="submit" class="btn btn-primary" onclick="submitRegistration('farmer')">Register</button>
+			</div>
+
+			<div id="farmer-success-message" class="success-message"></div>
+			<div id="farmer-error-message" class="error-message" style="display: none;"></div>
+		</form>
+	</div>
+</body>
+
+</html>

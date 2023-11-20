@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="/css/workRequest.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+	<script src="https://www.gstatic.com/charts/loader.js"></script>
+	<script src="https://www.google.com/jsapi"></script>
+
+	
+	<script async defer
+		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBXnFrLVLk4vswX0j3AFamkzB37ZYRvQ9Q&libraries=places&callback=initMap"></script>
+
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script src="/js/workRequest.js"></script>
+</head>
+
+<body>
+	
+	
+	
+	<!-- Farmer Registration Form -->
+	<div id="booktracktor" class="centered-form">
+		<span class="close-button" onclick="closeForm('booktracktor')">X</span>
+		<h2>Request Tractor</h2>
+		<form onsubmit="submitFarmerForm(event)">
+			<label for="farmerName">Farmer Name:</label>
+			<input type="text" id="farmerName" name="farmerName" required><br><br>
+			<label for="phoneNumber">Phone Number:</label>
+			<input type="tel" id="phoneNumber" name="phoneNumber" required><br><br>
+			<label for="farmAddress">Farm Address:</label>
+			<input type="text" id="farmAddress" name="farmAddress" required><br><br>
+			<label for="workDetails">Work Details:</label>
+			<select id="workDetails" name="workDetails" class="custom-select" onchange="toggleOtherWorkDetails(this)">
+				<option value="PlowTheField">Plow The Field</option>
+				<option value="SowingTheField">Sowing The Field</option>
+				<option value="ShreddingInTheField">Shredding In The Field</option>
+				<option value="RotoringInTheField">Rotoring In The Field</option>
+				<option value="LevelingTheField">Leveling The Field</option>
+				<option value="CarrageOfGoods">Carrage Of Goods</option>
+				<option value="MaizeHarvester">Maize Harvester</option>
+				<option value="WaterSupplyByTankers">Water Supply By Tankers</option>
+				<option value="CultivatorInTheField">Cultivator In The Field</option>
+				<option value="other">Other</option>
+			</select>
+			<input type="text" id="otherWorkDetails" name="otherWorkDetails" style="display: none;"
+				placeholder="Enter other work details">
+			<label for="FieldArea">Field Area:</label>
+			<select id="FieldArea" name="FieldArea" class="custom-select" onchange="toggleOtherInput(this)">
+				<option value="1 Acre">1 Acre</option>
+				<option value="3 Acre">3 Acre</option>
+				<option value="4 Acre">4 Acre</option>
+				<option value="5 Acre">5 Acre</option>
+				<option value="6 Acre">6 Acre</option>
+				<option value="7 Acre">7 Acre</option>
+				<option value="8 Acre">8 Acre</option>
+				<option value="9 Acre">9 Acre</option>
+				<option value="10 Acre">10 Acre</option>
+				<option value="other">Other</option>
+			</select><br><br>
+			<input type="text" id="OtherFieldArea" name="OtherFieldArea" style="display: none;"
+				placeholder="Enter other value">
+			<label for="TractorNeed">Tractor Need:</label>
+			<input type="date" id="WhenTractorWillCome" name="WhenTractorWillCome" required><br><br>
+
+			<label for="paymentMode">Payment Mode:</label>
+			<select id="paymentMode" name="paymentMode" class="custom-select">
+				<option value="Cash">Cash</option>
+				<option value="PhonePay">PhonePay</option>
+				<option value="GooglePay">GooglePay</option>
+				<option value="Paytm">Paytm</option>
+				<option value="NetBanking">NetBanking</option>
+
+			</select><br><br>
+			<!-- Map container -->
+			<div id="map"></div>
+			<button type="button" id="currentLocationButton">Current Location</button>
+			<button type="button" id="searchLocationButton">Search Location</button>
+			<div id="searchContainer" style="display: none;">
+				<input type="text" id="locationSearchInput" placeholder="Enter location">
+				<button type="button" id="searchButton">Search</button>
+			</div>
+
+
+			<div class="button-container">
+				<button type="submit" id="submitBtn">Book Tractor For My work</button>
+			</div>
+			<div id="successMessage" class="success-message">
+				Request sent successfully!
+			</div>
+			<a href="/index.html" id="homeLink" style="display: none;">Go back to home page</a>
+
+
+
+	</div>
+	
+
+
+
+
+</body>
+
+</html>

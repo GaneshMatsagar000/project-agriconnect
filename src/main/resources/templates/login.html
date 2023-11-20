@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Register as Farmer</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/login.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+    <script src="https://www.gstatic.com/charts/loader.js"></script>
+    <script src="https://www.google.com/jsapi"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="/js/login.js"></script>
+</head>
+
+<body>
+	
+	
+    <h1>Agri-Connect Login</h1>
+    <!-- Overlay for displaying text -->
+    <div id="overlay" class="overlay">
+        <div class="overlay-text" id="overlay-content"></div>
+    </div>
+
+    <div class="login-container">
+        <div class="container">
+            <!-- Step 1: Enter Phone Number -->
+            <div id="step-1" class="login-step">
+                <h2>Enter Your Phone Number</h2>
+                <input type="text" id="phone-number" placeholder="Phone Number">
+                <button id="get-otp-button">Get OTP</button>
+                <p id="send-otp-message"></p> <!-- Display OTP send message here -->
+            </div>
+
+            <!-- Step 2: Enter OTP -->
+            <div id="step-2" class="login-step">
+                <h2>Enter OTP</h2>
+                <input type="text" id="otp" placeholder="OTP">
+                <button id="verify-otp-button">Verify OTP</button>
+                <p id="verify-otp-message"></p> <!-- Display OTP verify message here -->
+            </div>
+        </div>
+    </div>
+    
+    
+</body>
+
+</html>

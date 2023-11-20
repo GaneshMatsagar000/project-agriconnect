@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/workRequest.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="/js/workRequest.js"></script>
+</head>
+
+<body>
+	
+	
+
+	<!-- Tractor Registration Form -->
+	<div id="tractorForm" class="centered-form">
+		<span class="close-button" onclick="closeForm('tractorForm')">X</span>
+		<h2>Request Farmer</h2>
+		<form onsubmit="submitTractorForm(event)">
+			<label for="ownerName">Driver Name:</label>
+			<input type="text" id="ownerName" name="ownerName" required><br><br>
+			<label for="tractorName">Select Tractor Name:</label>
+			<select id="tractorName" name="tractorName" class="custom-select" onchange="toggleOtherTractorName(this)">
+				<option value="mahindra">Mahindra</option>
+				<option value="ferguson">Ferguson</option>
+				<option value="sonalika">Sonalika</option>
+				<option value="swaraj">Swaraj</option>
+				<option value="john-deere">John Deere</option>
+				<option value="eicher">Eicher</option>
+				<option value="tata">Tata</option>
+				<option value="force">Force</option>
+				<option value="other">Other</option>
+			</select>
+			<input type="text" id="otherTractorName" name="otherTractorName" style="display: none;"
+				placeholder="Enter other tractor name">
+			<label for="tractorNumber">Tractor Number:</label>
+			<input type="text" id="tractorNumber" name="tractorNumber" required><br><br>
+			<label for="phoneNumberTractor">Phone Number:</label>
+			<input type="tel" id="phoneNumberTractor" name="phoneNumberTractor" required><br><br>
+			<label for="WhenTractorWillCome">When Tractor Will Come:</label>
+			<input type="date" id="WhenTractorCome" name="WhenTractorWillCome" required><br><br>
+			<label for="tractorTime">Select Time:</label>
+			<input type="time" id="tractorTime" name="tractorTime" required><br><br>
+			<label for="currency">Currency:</label>
+			<select id="currency" name="currency" class="custom-select">
+				<option value="INR">Indian Rupees (INR)</option>
+				<option value="USD">US Dollars (USD)</option>
+				<option value="EUR">Euros (EUR)</option>
+				<option value="GBP">British Pounds (GBP)</option>
+				<option value="JPY">Japanese Yen (JPY)</option>
+				<option value="CAD">Canadian Dollars (CAD)</option>
+				<!-- Add more currencies here -->
+			</select><br><br>
+			<label for="costOfWork">Cost of Work:</label>
+			<input type="number" id="costOfWork" name="costOfWork" required><br><br>
+			<div class="button-container">
+				<button type="submit">Send Work Request To Farmer</button>
+			</div>
+		</form>
+		<p class="success-message" id="tractorSuccessMessage">Request submitted successfully!</p>
+	</div>
+
+
+	
+</body>
+</html>

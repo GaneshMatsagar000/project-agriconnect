@@ -1,0 +1,101 @@
+/* CSS for success message */
+.success-message {
+	display: none;
+	color: green;
+	font-weight: bold;
+}
+
+.centered-form {
+  position: relative; /* Add this line */
+  max-width: 600px;
+  bottom: 5%;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 20px;
+  cursor: pointer;
+  background-color: rgb(255, 255, 255);
+  padding: 5px;
+  border-radius: 50%;
+  color: rgb(0, 0, 0);
+}
+
+/* Hover effect */
+.drive-button:hover {
+	opacity: 0.8;
+}
+
+
+/* Style form elements */
+label {
+	font-weight: bold;
+	margin-bottom: 8px;
+}
+
+input[type="text"],
+input[type="tel"],
+select.custom-select,
+textarea {
+	width: 100%;
+	padding: 10px;
+	margin-bottom: 20px;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	font-size: 16px;
+	background-color: rgb(0, 0, 0);
+	/* Semi-transparent white background */
+	color: white;
+}
+
+/* Style the select element with custom-select class */
+select.custom-select {
+	background-color: black;
+	color: white;
+}
+
+select.custom-select option {
+	background-color: black;
+	/* Change background color for options */
+}
+.button-container {
+    text-align: center;
+    margin-top: 20px; /* Adjust the margin-top to control the spacing between the button and other elements in the form */
+}
+
+
+button[type="submit"] {
+  background-color: #4CAF50;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 20px; /* Adjust the margin-top to control the spacing between the button and other elements in the form */
+}
+
+button[type="submit"]:hover {
+  background-color: #45a049;
+}
+
+#map {
+    height: 400px;
+    width: 100%;
+}
+
+.success-message {
+    color: darkgreen;
+    display: none; /* Initially hide the message */
+}
