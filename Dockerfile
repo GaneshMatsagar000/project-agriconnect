@@ -5,7 +5,7 @@ COPY . .
 RUN maven clean package -DskipTests
 
 
-FROM openjdk:17.0.1-jdk-slim
+FROM openjdk:17-jdk-slim
 
 COPY --from=build /target/agriculture-0.0.1-SNAPSHOT.jar agriculture.jar
 
