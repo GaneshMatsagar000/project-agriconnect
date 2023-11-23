@@ -10,8 +10,8 @@
 //#########################################
 const fetchSearchResults = async (searchTerm) => {
     try {
-        const response = await fetch(`http://localhost:8080/api/workrequests/all?search=${searchTerm}`);
-        
+        const response = await fetch(`https://agri-connect-qj8x.onrender.com/api/workrequests/all?search=${searchTerm}`);
+
         if (!response.ok) {
             throw new Error(`HTTP error! Status: ${response.status}`);
         }
@@ -23,7 +23,6 @@ const fetchSearchResults = async (searchTerm) => {
         throw error;
     }
 };
-
 
 const displaySearchResults = (results) => {
     const searchResultsDiv = document.getElementById('searchResults');
@@ -110,12 +109,15 @@ const removeTableRow = (rowData) => {
     }
 };
 
-
-
 const searchData = async () => {
-    const searchTerm = document.getElementById('searchInput').value;
-    const results = await fetchSearchResults(searchTerm);
-    displaySearchResults(results);
+    try {
+        const searchTerm = document.getElementById('searchInput').value;
+        const results = await fetchSearchResults(searchTerm);
+        displaySearchResults(results);
+    } catch (error) {
+        console.error('Error in search:', error.message);
+        // Handle the error, e.g., show a user-friendly message
+    }
 };
 
 const closeForm = () => {
