@@ -66,4 +66,19 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
         auth.userDetailsService(userDetailsService).passwordEncoder(passwordEncoder());
     }
+
+  
+    
+
+   
+
+    @Bean
+    public UserDetailsService userDetailsService() {
+        UserDetails user = User.builder()
+            .username("ganesh")
+            .password(passwordEncoder().encode("ganesh"))
+            .roles("USER") // Add roles as needed
+            .build();
+        return new InMemoryUserDetailsManager(user);
+    }
 }
