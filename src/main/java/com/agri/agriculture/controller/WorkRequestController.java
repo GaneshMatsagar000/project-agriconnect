@@ -1,8 +1,10 @@
 package com.agri.agriculture.controller;
+
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -15,6 +17,7 @@ import com.agri.agriculture.service.WorkRequestService;
 
 @RestController
 @RequestMapping("/api/workrequests")
+@CrossOrigin(origins = "https://agri-connect-qj8x.onrender.com") // Add your frontend URL here
 public class WorkRequestController {
 
     private final WorkRequestService workRequestService;
@@ -33,15 +36,9 @@ public class WorkRequestController {
             return ResponseEntity.status(500).body("Error submitting work request");
         }
     }
-    
-    
 
-    @GetMapping("/all") //working do not change 
-	public List<WorkRequest> getAllWorkRequst() {
-		// Call the farmerService to retrieve all farmers
-		return workRequestService.getAllWorkRequst();
-	}
-
-    
-   
+    @GetMapping("/all")
+    public List<WorkRequest> getAllWorkRequst() {
+        return workRequestService.getAllWorkRequst();
+    }
 }
