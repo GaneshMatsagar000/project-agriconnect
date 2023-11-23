@@ -6,6 +6,7 @@ import javax.persistence.EntityManagerFactory;
 import javax.sql.DataSource;
 
 import org.apache.catalina.filters.CorsFilter;
+import org.modelmapper.ModelMapper;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
@@ -28,14 +29,19 @@ public class AppConfig {
     public AppConfig(Environment env) {
         this.env = env;
     }
+    
+    @Bean
+    public ModelMapper modelMapper() {
+        return new ModelMapper();
+    }
 
     @Bean
     public DataSource dataSource() {
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
-        dataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");
-        dataSource.setUrl("jdbc:mysql://localhost:3306/employee");
-        dataSource.setUsername("root");
-        dataSource.setPassword("1234");
+        dataSource.setDriverClassName("org.postgresql.Driver");
+        dataSource.setUrl("jdbc:postgresql://dpg-clf34def27hc73bi8ajg-a.oregon-postgres.render.com:5432/farmer");
+        dataSource.setUsername("farmer_user");
+        dataSource.setPassword("aS58raUOqSCMuN7dFb4B6c2HHf5WoFsw");
         return dataSource;
     }
 
@@ -47,7 +53,7 @@ public class AppConfig {
         emf.setJpaVendorAdapter(new HibernateJpaVendorAdapter());
 
         Properties jpaProperties = new Properties();
-        jpaProperties.setProperty("hibernate.dialect", "org.hibernate.dialect.MySQL5Dialect");
+        jpaProperties.setProperty("hibernate.dialect", "org.hibernate.dialect.PostgreSQLDialect");
         jpaProperties.setProperty("hibernate.hbm2ddl.auto", "update");
         emf.setJpaProperties(jpaProperties);
 
