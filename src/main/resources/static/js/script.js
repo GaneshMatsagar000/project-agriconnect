@@ -11,13 +11,19 @@
 const fetchSearchResults = async (searchTerm) => {
     try {
         const response = await fetch(`http://localhost:8080/api/workrequests/all?search=${searchTerm}`);
+        
+        if (!response.ok) {
+            throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+
         const data = await response.json();
         return data;
     } catch (error) {
-        console.error('Error fetching data:', error);
+        console.error('Error fetching data:', error.message);
         throw error;
     }
 };
+
 
 const displaySearchResults = (results) => {
     const searchResultsDiv = document.getElementById('searchResults');
