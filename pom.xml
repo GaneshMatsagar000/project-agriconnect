@@ -1,3 +1,4 @@
+
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -49,16 +50,11 @@
 			<scope>runtime</scope>
 			<optional>true</optional>
 		</dependency>
+		
 		<dependency>
-			<groupId>com.h2database</groupId>
-			<artifactId>h2</artifactId>
-			<scope>runtime</scope>
-		</dependency>
-		<dependency>
-			<groupId>mysql</groupId>
-			<artifactId>mysql-connector-java</artifactId> <!-- Use "mysql"
-			instead of "com.mysql" -->
-			<scope>runtime</scope>
+    			<groupId>org.postgresql</groupId>
+    			<artifactId>postgresql</artifactId>
+    			<version>42.2.24</version> <!-- Use the version compatible with your PostgreSQL server -->
 		</dependency>
 		<dependency>
 			<groupId>org.projectlombok</groupId>
@@ -80,12 +76,12 @@
 			<artifactId>twilio</artifactId>
 			<version>9.11.0</version>
 		</dependency>
-
 		<dependency>
-			<groupId>org.modelmapper</groupId>
-			<artifactId>modelmapper</artifactId>
-			<version>2.4.4</version> <!-- Use the latest version available -->
+    			<groupId>org.modelmapper</groupId>
+    			<artifactId>modelmapper</artifactId>
+    			<version>2.4.4</version> <!-- Use the latest version available -->
 		</dependency>
+
 
 
 	</dependencies>
